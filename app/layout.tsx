@@ -10,7 +10,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'Chanheng Menh - Full-Stack Developer',
+  title: 'Chanheng Menh',
   description: 'Portfolio of Chanheng Menh, a Full-Stack Developer specializing in modern web technologies',
   generator: 'v0.app',
   icons: {
