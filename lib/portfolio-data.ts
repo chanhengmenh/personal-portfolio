@@ -1,6 +1,5 @@
 export const profileData = {
   name: 'Chanheng Menh',
-  title: 'Full-Stack Developer',
   avatar: '/profile.jpg',
   email: 'chanhengmenh@gmail.com',
   phone: '+85570494393',

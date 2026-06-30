@@ -23,9 +23,6 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
         </div>
 
         <h1 className="text-xl md:text-2xl font-bold text-foreground mb-1">{data.name}</h1>
-        <p className="text-xs md:text-sm text-muted-foreground bg-secondary px-3 md:px-4 py-1 rounded-lg">
-          {data.title}
-        </p>
       </div>
 
       {/* Divider */}
