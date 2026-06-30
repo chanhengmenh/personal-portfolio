@@ -22,7 +22,6 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
           </div>
         </div>
 
-        <h1 className="text-xl md:text-2xl font-bold text-foreground mb-1">{data.name}</h1>
       </div>
 
       {/* Divider */}
