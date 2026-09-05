@@ -54,6 +54,14 @@ export const resumeData = {
   ],
   experience: [
     {
+      title: 'Cloud Infrastructure Engineer',
+      company: 'RMO Technology Co., Ltd.',
+      companyUrl: '',
+      period: 'July 2026 — Present',
+      description:
+        'Engineered and managed foundational cloud infrastructure, including enterprise Linux distributions (RedHat, Ubuntu), primary and secondary Active Directory Domain Services (AD DS) with custom GPOs, and high-availability PostgreSQL clusters using Pgpool2. Configured Docker Swarm orchestration integrated with GlusterFS for persistent storage, supported team-wide vulnerability assessments (VA), and directly assisted in resolving urgent technical incidents.',
+    },
+    {
       title: 'UI/UX & Frontend Developer Intern',
       company: 'SpaceGap',
       companyUrl: 'https://website.spacegap.net/',
