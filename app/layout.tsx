@@ -6,10 +6,12 @@ import './globals.css'
 const poppins = Poppins({ 
   subsets: ["latin"],
   weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-poppins'
+  variable: '--font-poppins',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://chanhengmenh.vercel.app'),
   title: 'Chanheng Menh',
   description: 'Portfolio of Chanheng Menh',
   openGraph: {

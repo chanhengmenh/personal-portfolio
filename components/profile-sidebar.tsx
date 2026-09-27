@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Mail, Phone, Calendar, MapPin } from 'lucide-react'
 import { Github, Linkedin} from 'lucide-react'
 import { profileData } from '@/lib/portfolio-data'
@@ -15,9 +16,12 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
         <div className="relative w-56 md:w-full aspect-[3/4] mb-4 md:mb-6">
           <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-accent/20 via-accent/5 to-transparent animate-pulse-slow" />
           <div className="absolute inset-[2px] rounded-3xl bg-secondary overflow-hidden">
-            <img
+            <Image
               src={data.avatar || "/placeholder.svg"}
               alt={data.name}
+              fill
+              priority
+              sizes="(max-width: 768px) 224px, 320px"
               className="w-full h-full object-cover object-top"
             />
           </div>
@@ -80,7 +84,7 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
           className="w-10 h-10 rounded-lg bg-secondary hover:bg-accent hover:text-accent-foreground transition-colors flex items-center justify-center"
           aria-label="GitHub"
         >
-          <Github className="w-5 h-5" />
+          <Github className="w-5 h-5" aria-hidden="true" />
         </a>
         <a
           href={data.social.linkedin}
@@ -89,7 +93,7 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
           className="w-10 h-10 rounded-lg bg-secondary hover:bg-accent hover:text-accent-foreground transition-colors flex items-center justify-center"
           aria-label="LinkedIn"
         >
-          <Linkedin className="w-5 h-5" />
+          <Linkedin className="w-5 h-5" aria-hidden="true" />
         </a>
 
         <a          
@@ -99,8 +103,7 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
           className="w-10 h-10 rounded-lg bg-secondary hover:bg-accent hover:text-accent-foreground transition-colors flex items-center justify-center"
           aria-label="Credly"
         >
-          <SiCredly className="w-5 h-5" />
-
+          <SiCredly className="w-5 h-5" aria-hidden="true" />
         </a>
       </div>
     </aside>
