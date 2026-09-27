@@ -2,7 +2,7 @@
 
 export const dynamic = 'force-static'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ProfileSidebar } from '@/components/profile-sidebar'
 import { AboutSection } from '@/components/about-section'
 import { ResumeSection } from '@/components/resume-section'
@@ -16,8 +16,29 @@ import {
   contactData,
 } from '@/lib/portfolio-data'
 
+const SECTIONS = ['about', 'resume', 'projects', 'contact'] as const
+type Section = (typeof SECTIONS)[number]
+
 export default function Home() {
-  const [activeSection, setActiveSection] = useState('about')
+  const [activeSection, setActiveSection] = useState<Section>('about')
+
+  useEffect(() => {
+    const syncFromHash = () => {
+      const hash = window.location.hash.replace('#', '').toLowerCase() as Section
+      if (SECTIONS.includes(hash)) {
+        setActiveSection(hash)
+      }
+    }
+
+    syncFromHash()
+    window.addEventListener('hashchange', syncFromHash)
+    return () => window.removeEventListener('hashchange', syncFromHash)
+  }, [])
+
+  const handleSectionChange = (section: Section) => {
+    setActiveSection(section)
+    window.history.replaceState(null, '', `#${section}`)
+  }
 
   return (
     <div className="min-h-screen bg-background p-3 sm:p-4 md:p-6 lg:p-12">
@@ -33,10 +54,10 @@ export default function Home() {
           <main className="flex-1 min-w-0 bg-card rounded-xl md:rounded-2xl border border-border">
             {/* Navigation */}
             <nav className="sticky top-0 lg:static z-40 flex gap-1 sm:gap-2 md:gap-4 p-3 sm:p-4 md:p-6 border-b border-border overflow-x-auto scrollbar-hide bg-card rounded-t-xl md:rounded-t-2xl lg:rounded-none">
-              {['about', 'resume', 'projects', 'contact'].map((section) => (
+              {SECTIONS.map((section) => (
                 <button
                   key={section}
-                  onClick={() => setActiveSection(section)}
+                  onClick={() => handleSectionChange(section)}
                   className={`px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium capitalize transition-colors whitespace-nowrap flex-shrink-0 ${
                     activeSection === section
                       ? 'text-foreground bg-accent/10'
