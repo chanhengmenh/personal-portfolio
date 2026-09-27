@@ -7,7 +7,6 @@ import {
   BookOpen,
   Briefcase,
   Code2,
-  Download,
   ExternalLink,
   Star,
   Globe,
@@ -85,14 +84,10 @@ export function ResumeSection({ data = resumeData }: ResumeSectionProps) {
   const [mounted, setMounted] = useState(false)
   const [modalState, setModalState] = useState<{
     isOpen: boolean
-    activeTab: 'photo' | 'diploma'
     title: string
     photoUrl?: string
-    diplomaUrl?: string
-    verifyUrl?: string
   }>({
     isOpen: false,
-    activeTab: 'photo',
     title: '',
   })
 
@@ -116,25 +111,10 @@ export function ResumeSection({ data = resumeData }: ResumeSectionProps) {
     }
   }, [modalState.isOpen])
 
-  const currentImgUrl =
-    modalState.activeTab === 'photo'
-      ? modalState.photoUrl || ''
-      : modalState.diplomaUrl || modalState.photoUrl || ''
-
   return (
     <div className="space-y-8 md:space-y-10">
       <div>
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground">Resume</h2>
-          <a
-            href="/resume.pdf"
-            download="Chanheng_Menh_Resume.pdf"
-            className="flex items-center gap-2 text-sm text-accent border border-accent px-3 py-1.5 rounded hover:bg-accent hover:text-accent-foreground transition-colors"
-          >
-            <Download className="w-4 h-4" />
-            Download CV
-          </a>
-        </div>
+        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Resume</h2>
         <div className="w-10 h-1 bg-accent rounded-full mb-6" />
       </div>
 
@@ -188,15 +168,12 @@ export function ResumeSection({ data = resumeData }: ResumeSectionProps) {
                     onClick={() =>
                       setModalState({
                         isOpen: true,
-                        activeTab: 'photo',
                         title: item.title,
                         photoUrl: item.imageUrl,
-                        diplomaUrl: item.diplomaUrl,
-                        verifyUrl: item.verifyUrl,
                       })
                     }
                     className="w-32 sm:w-36 md:w-40 aspect-[3/4] relative rounded-xl overflow-hidden border border-border bg-secondary shrink-0 shadow-sm group cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent block text-left p-0"
-                    aria-label="Click to enlarge photo and diploma"
+                    aria-label="Click to enlarge photo"
                   >
                     <Image
                       src={item.imageUrl}
@@ -339,54 +316,14 @@ export function ResumeSection({ data = resumeData }: ResumeSectionProps) {
             >
               {/* Modal Header */}
               <div className="w-full flex items-center justify-between pb-3 border-b border-border gap-2">
-                <div className="flex items-center gap-2 min-w-0">
-                  {modalState.photoUrl && modalState.diplomaUrl ? (
-                    <div className="flex bg-secondary p-1 rounded-lg gap-1 border border-border">
-                      <button
-                        type="button"
-                        onClick={() => setModalState((prev) => ({ ...prev, activeTab: 'photo' }))}
-                        className={`px-3 py-1 text-xs font-medium rounded-md transition-colors cursor-pointer ${
-                          modalState.activeTab === 'photo'
-                            ? 'bg-accent text-accent-foreground shadow-xs'
-                            : 'text-muted-foreground hover:text-foreground'
-                        }`}
-                      >
-                        Graduation Photo
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setModalState((prev) => ({ ...prev, activeTab: 'diploma' }))}
-                        className={`px-3 py-1 text-xs font-medium rounded-md transition-colors cursor-pointer ${
-                          modalState.activeTab === 'diploma'
-                            ? 'bg-accent text-accent-foreground shadow-xs'
-                            : 'text-muted-foreground hover:text-foreground'
-                        }`}
-                      >
-                        Official Diploma
-                      </button>
-                    </div>
-                  ) : (
-                    <h4 className="text-sm font-semibold text-foreground truncate">{modalState.title}</h4>
-                  )}
-                </div>
+                <h4 className="text-sm sm:text-base font-semibold text-foreground truncate min-w-0">
+                  {modalState.title}
+                </h4>
 
                 <div className="flex items-center gap-2 shrink-0">
-                  {modalState.verifyUrl && (
+                  {modalState.photoUrl && (
                     <a
-                      href={modalState.verifyUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-medium text-accent bg-accent/10 hover:bg-accent hover:text-accent-foreground px-2.5 py-1.5 rounded-lg border border-accent/20 transition-colors"
-                    >
-                      <Award className="w-3.5 h-3.5" />
-                      <span className="hidden sm:inline">Verify on Gov Portal</span>
-                      <span className="sm:hidden">Verify</span>
-                      <ExternalLink className="w-3 h-3 ml-0.5 opacity-70" />
-                    </a>
-                  )}
-                  {currentImgUrl && (
-                    <a
-                      href={currentImgUrl}
+                      href={modalState.photoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground bg-secondary hover:bg-secondary/80 px-2.5 py-1.5 rounded-lg border border-border transition-colors cursor-pointer"
@@ -409,11 +346,13 @@ export function ResumeSection({ data = resumeData }: ResumeSectionProps) {
 
               {/* Modal Body / Image View */}
               <div className="relative w-full flex-1 min-h-[300px] max-h-[72vh] flex items-center justify-center overflow-auto rounded-xl bg-black/40 p-2 sm:p-4 my-2">
-                <img
-                  src={currentImgUrl}
-                  alt={modalState.title}
-                  className="max-w-full max-h-[68vh] object-contain rounded-lg shadow-md select-none"
-                />
+                {modalState.photoUrl && (
+                  <img
+                    src={modalState.photoUrl}
+                    alt={modalState.title}
+                    className="max-w-full max-h-[68vh] object-contain rounded-lg shadow-md select-none"
+                  />
+                )}
               </div>
 
               {/* Modal Footer */}
