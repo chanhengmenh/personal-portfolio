@@ -13,10 +13,10 @@ export const profileData = {
 
 export const aboutData = {
   description: [
-    "I'm a Digital Infrastructure graduate from American University of Phnom Penh (AUPP), working across data/AI and DevOps — two areas that overlap more than most people expect. On the ML side, I build and deploy models using Python, PyTorch, and Scikit-learn, serving them through FastAPI on cloud infrastructure. On the DevOps side, I provision infrastructure with Terraform, set up CI/CD pipelines in Jenkins, monitor systems with Grafana and Prometheus, and maintain code quality with SonarQube — all on AWS.",
-    "I'm comfortable across the stack without pretending to be a frontend engineer. I can spin up an EC2 instance, deploy a containerized model, hook it into a pipeline, and watch it in a dashboard — end to end, without needing someone else to glue the pieces together.",
-    "On the IT side, I've handled live A/V and technical troubleshooting at a large international conference, and I'm at home in Linux environments.",
-    "I'm looking for roles in DevOps, data engineering, AI/ML, or IT operations — anywhere technical ownership matters and there's room to keep building."
+    "I am a Cloud Infrastructure Engineer and Digital Infrastructure graduate from the American University of Phnom Penh (AUPP), specializing in the intersection of Cloud Architecture, DevOps, and AI/MLOps.",
+    "My focus is building the resilient plumbing that modern applications depend on. On the infrastructure side, I design and manage hybrid cloud environments, Kubernetes clusters, and API gateways, automating deployments with Terraform and CI/CD pipelines, and monitoring system health with Prometheus and Grafana.",
+    "On the AI/ML side, I don't just train models — I productionize them. From fine-tuning LLMs with LoRA and building RAG pipelines to serving models with FastAPI and containerizing them on AWS, I bridge the gap between machine learning and operational reality.",
+    "I thrive in environments where technical ownership matters, Linux is second nature, and systems need to run securely, scalably, and without friction.",
   ],
   services: [
     {
