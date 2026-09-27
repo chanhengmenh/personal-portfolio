@@ -11,8 +11,18 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: 'Chanheng Menh',
-  description: 'Portfolio of Chanheng Menh, a Full-Stack Developer specializing in modern web technologies',
-  generator: 'v0.app',
+  description: 'Portfolio of Chanheng Menh',
+  openGraph: {
+    title: 'Chanheng Menh',
+    description: 'Portfolio of Chanheng Menh',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
   icons: {
     icon: [
       {

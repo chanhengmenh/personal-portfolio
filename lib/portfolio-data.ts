@@ -50,16 +50,31 @@ export const resumeData = {
       description: 'Bachelor of Science in Digital Infrastructure',
       schoolUrl: 'https://www.aupp.edu.kh/',
       degreeUrl: 'https://www.aupp.edu.kh/faculty-of-digital-technologies/bachelor-of-science-in-digital-infrastructure/',
+      imageUrl: '/edu-aupp.jpg',
+      diplomaUrl: '/chanhengmenh-diploma.jpg',
+      verifyUrl:
+        'https://verify.gov.kh/verify/_3PytK9UJQH29oruPrBSxp0Vbr57N6re?key=8e365548932f1300ab26d527a641a84e5833690d027ce489c37226ca4b77ba48',
     },
   ],
   experience: [
     {
       title: 'Cloud Infrastructure Engineer',
       company: 'RMO Technology Co., Ltd.',
-      companyUrl: '',
+      companyUrl: 'https://rmo-technology.com/',
       period: 'July 2026 — Present',
-      description:
-        'Engineered and managed foundational cloud infrastructure, including enterprise Linux distributions (RedHat, Ubuntu), primary and secondary Active Directory Domain Services (AD DS) with custom GPOs, and high-availability PostgreSQL clusters using Pgpool2. Configured Docker Swarm orchestration integrated with GlusterFS for persistent storage, supported team-wide vulnerability assessments (VA), and directly assisted in resolving urgent technical incidents.',
+      description: [
+        'Design, implement, and manage API Management solutions to support secure, scalable integration across systems and services.',
+        'Administer and optimize Managed File Transfer (MFT) platforms to enable secure, reliable data exchange across hybrid environments.',
+        'Support the deployment and integration of Generative AI (GenAI) solutions into cloud-native and on-premises infrastructures.',
+        'Deploy, maintain, and troubleshoot cloud-native platforms and operating systems (e.g., Kubernetes, Linux, container-based platforms) in hybrid cloud environments.',
+        'Administer, monitor, and optimize enterprise databases (e.g., Microsoft SQL Server, Oracle, PostgreSQL, MySQL) ensuring availability, security, performance, upgrades, and disaster recovery operations.',
+        'Collaborate with application, security, and network teams to ensure hybrid solutions meet security, compliance, and performance standards.',
+        'Continuously evaluate emerging cloud and infrastructure technologies, including AI, automation, and containerization trends, and recommend adoption strategies.',
+        'Provide support for cloud and hybrid infrastructure issues, coordinating with vendors as necessary.',
+        'Develop and maintain infrastructure documentation, architecture diagrams, and operational runbooks.',
+        'Contribute to business continuity and disaster recovery planning for hybrid environments.',
+        'Perform other infrastructure-related tasks and projects as assigned.',
+      ],
     },
     {
       title: 'UI/UX & Frontend Developer Intern',
@@ -126,9 +141,9 @@ export const extracurricularData = [
 
 export const skillsData = {
   languages: [
-    { name: 'Python (FastAPI, SQLAlchemy)', icon: '/python.png' },
+    { name: 'Python', icon: '/python.png' },
     { name: 'Node.js', icon: '/node.png' },
-    { name: 'Express.js' },
+    { name: 'Express.js', icon: '/express.svg' },
     { name: 'PostgreSQL', icon: '/postgresql.png' },
     { name: 'RESTful API Design' },
   ],
@@ -142,28 +157,39 @@ export const skillsData = {
     { name: 'Scikit-learn', icon: '/scikit-learn.png' },
     { name: 'YOLO', icon: '/ultralytics-yolo.png' },
     { name: 'Pandas', icon: '/pandas.png' },
+    { name: 'Polars', icon: '/polars.png' },
     { name: 'NumPy', icon: '/numpy.png' },
     { name: 'Computer Vision' },
     { name: 'Natural Language Processing' },
   ],
-  infrastructure: [
+  cloudDevops: [
     { name: 'Docker', icon: '/docker.png' },
     { name: 'Kubernetes', icon: '/kubernetes.png' },
+    { name: 'Linux', icon: '/linux.png' },
+    { name: 'AWS (EC2, S3, RDS)', icon: '/aws.png' },
     { name: 'Jenkins', icon: '/jenkins.png' },
     { name: 'GitHub Actions', icon: '/github.png' },
     { name: 'SonarQube', icon: '/sonarqube.png' },
-    { name: 'Linux (Ubuntu/Fedora)', icon: '/linux.png' },
-    { name: 'AWS (EC2, S3, RDS)', icon: '/aws.png' },
     { name: 'PostgreSQL', icon: '/postgresql.png' },
     { name: 'MongoDB', icon: '/mongodb.png' },
-    { name: 'DynamoDB' },
+    { name: 'DynamoDB', icon: '/dynamodb.png' },
     { name: 'Firebase', icon: '/firebase.png' },
     { name: 'Supabase', icon: '/supabase.png' },
-    { name: 'RBAC' },
+    { name: 'API Management' },
+    { name: 'MFT (Managed File Transfer)' },
     { name: 'Microservices' },
     { name: 'CI/CD' },
     { name: 'System Design' },
-  ]
+  ],
+  enterprise: [
+    { name: 'Windows Server', icon: '/windows-server.png' },
+    { name: 'Microsoft Exchange', icon: '/microsoft-exchange.png' },
+    { name: '3CX (VoIP)', icon: '/3cx.png' },
+    { name: 'vTiger CRM', icon: '/Vtiger_CRM.png' },
+    { name: 'Active Directory (AD DS)' },
+    { name: 'RBAC' },
+    { name: 'Disaster Recovery' },
+  ],
 }
 
 export const projectsData = [
