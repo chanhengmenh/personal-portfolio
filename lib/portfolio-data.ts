@@ -218,13 +218,6 @@ export const projectsData = [
     imageUrl: '/spam_detection.png',
   },
   {
-    title: 'AUPP Intelligent Chatbot',
-    description:
-      'Fully local university chatbot combining RAG, knowledge distillation, and fine-tuning on 2,500+ Q&A pairs using Unsloth + LoRA (4-bit). Exported as GGUF, served via Ollama, with a Streamlit UI featuring streaming and source citations.',
-    tags: ['Llama 3.1', 'Ollama', 'ChromaDB', 'Streamlit', 'Unsloth'],
-    githubUrl: 'https://github.com/chanhengmenh/aupp_chatbot.git',
-  },
-  {
     title: 'AUPP LMS CI/CD Pipeline',
     description:
       'Designed and implemented a full CI/CD pipeline for a university LMS, automating code quality checks, security scanning, and deployment to AWS EC2. Integrated SonarQube and Trivy to enforce quality gates and block deployments on critical vulnerabilities. Provisioned cloud infrastructure with Terraform and monitored live deployments via Prometheus and Grafana dashboards.',
