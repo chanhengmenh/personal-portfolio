@@ -12,35 +12,39 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://chanhengmenh.vercel.app'),
-  title: 'Chanheng Menh',
-  description: 'Portfolio of Chanheng Menh',
+  title: 'Chanheng Menh | Cloud Infrastructure & AI/MLOps Engineer',
+  description: 'Portfolio of Chanheng Menh — Cloud Infrastructure Engineer specializing in Cloud Architecture, DevOps, and AI/MLOps.',
   openGraph: {
-    title: 'Chanheng Menh',
-    description: 'Portfolio of Chanheng Menh',
+    title: 'Chanheng Menh | Cloud Infrastructure & AI/MLOps Engineer',
+    description: 'Portfolio of Chanheng Menh — Cloud Infrastructure Engineer specializing in Cloud Architecture, DevOps, and AI/MLOps.',
+    url: 'https://chanhengmenh.vercel.app',
+    siteName: 'Chanheng Menh Portfolio',
+    locale: 'en_US',
+    type: 'website',
     images: [
       {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
+        url: '/profile.jpg',
+        width: 800,
+        height: 1200,
+        alt: 'Chanheng Menh',
       },
     ],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Chanheng Menh | Cloud Infrastructure & AI/MLOps Engineer',
+    description: 'Portfolio of Chanheng Menh — Cloud Infrastructure Engineer specializing in Cloud Architecture, DevOps, and AI/MLOps.',
+    images: ['/profile.jpg'],
+  },
   icons: {
     icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
       {
         url: '/icon.svg',
         type: 'image/svg+xml',
       },
     ],
-    apple: '/apple-icon.png',
+    shortcut: '/icon.svg',
+    apple: '/icon.svg',
   },
 }
 
@@ -50,7 +54,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <body className={`${poppins.className} font-sans antialiased`}>
         {children}
         <Analytics />

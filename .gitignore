@@ -28,3 +28,7 @@ next-env.d.ts
 
 #prompts
 /prompts
+
+# graphify & planning artifacts
+graphify-out/
+*.graphify*

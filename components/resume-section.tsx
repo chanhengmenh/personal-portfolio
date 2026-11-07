@@ -10,6 +10,7 @@ import {
   ExternalLink,
   Star,
   Globe,
+  BarChart3,
   Eye,
   Bot,
   Database,
@@ -20,43 +21,94 @@ import {
   Award,
   X,
   ZoomIn,
+  Phone,
+  Users,
 } from 'lucide-react'
+import {
+  SiPython,
+  SiNodedotjs,
+  SiExpress,
+  SiPostgresql,
+  SiPytorch,
+  SiTensorflow,
+  SiScikitlearn,
+  SiPandas,
+  SiPolars,
+  SiNumpy,
+  SiOpencv,
+  SiHuggingface,
+  SiUltralytics,
+  SiDocker,
+  SiKubernetes,
+  SiLinux,
+  SiJenkins,
+  SiGithubactions,
+  SiSonar,
+  SiMongodb,
+  SiFirebase,
+  SiSupabase,
+} from 'react-icons/si'
+import {
+  FaFileExcel,
+  FaAws,
+  FaWindows,
+  FaMicrosoft,
+} from 'react-icons/fa6'
 import { resumeData, skillsData, extracurricularData } from '@/lib/portfolio-data'
 
-function getSkillFallbackIcon(name: string) {
+function renderSkillIcon(name: string) {
+  const iconClass = "w-6 h-6 text-foreground/80 dark:text-foreground/90 group-hover:text-accent transition-colors duration-200"
   const lower = name.toLowerCase()
-  if (lower.includes('api') || lower.includes('rest')) {
-    return <Globe className="w-6 h-6 text-neutral-800" />
-  }
-  if (lower.includes('vision')) {
-    return <Eye className="w-6 h-6 text-neutral-800" />
-  }
-  if (lower.includes('nlp') || lower.includes('language')) {
-    return <Bot className="w-6 h-6 text-neutral-800" />
-  }
-  if (lower.includes('dynamodb') || lower.includes('database')) {
-    return <Database className="w-6 h-6 text-neutral-800" />
-  }
-  if (
-    lower.includes('rbac') ||
-    lower.includes('auth') ||
-    lower.includes('security') ||
-    lower.includes('recovery') ||
-    lower.includes('directory') ||
-    lower.includes('ad ds')
-  ) {
-    return <ShieldCheck className="w-6 h-6 text-neutral-800" />
-  }
-  if (lower.includes('microservice')) {
-    return <Boxes className="w-6 h-6 text-neutral-800" />
-  }
-  if (lower.includes('ci/cd') || lower.includes('pipeline') || lower.includes('mft') || lower.includes('transfer')) {
-    return <GitFork className="w-6 h-6 text-neutral-800" />
-  }
-  if (lower.includes('design') || lower.includes('system')) {
-    return <Layers className="w-6 h-6 text-neutral-800" />
-  }
-  return <Code2 className="w-6 h-6 text-neutral-800" />
+
+  // Languages & Frameworks
+  if (lower === 'python') return <SiPython className={iconClass} />
+  if (lower.includes('node')) return <SiNodedotjs className={iconClass} />
+  if (lower.includes('express')) return <SiExpress className={iconClass} />
+  if (lower.includes('postgresql')) return <SiPostgresql className={iconClass} />
+  if (lower.includes('api') || lower.includes('rest')) return <Globe className={iconClass} />
+
+  // Analytics
+  if (lower.includes('excel')) return <FaFileExcel className={iconClass} />
+  if (lower.includes('power bi') || lower.includes('powerbi')) return <BarChart3 className={iconClass} />
+
+  // AI / ML
+  if (lower.includes('pytorch')) return <SiPytorch className={iconClass} />
+  if (lower.includes('tensorflow')) return <SiTensorflow className={iconClass} />
+  if (lower.includes('scikit')) return <SiScikitlearn className={iconClass} />
+  if (lower.includes('yolo')) return <SiUltralytics className={iconClass} />
+  if (lower.includes('pandas')) return <SiPandas className={iconClass} />
+  if (lower.includes('polars')) return <SiPolars className={iconClass} />
+  if (lower.includes('numpy')) return <SiNumpy className={iconClass} />
+  if (lower.includes('vision')) return <SiOpencv className={iconClass} />
+  if (lower.includes('nlp') || lower.includes('language')) return <SiHuggingface className={iconClass} />
+
+  // Cloud & DevOps Infrastructure
+  if (lower.includes('docker')) return <SiDocker className={iconClass} />
+  if (lower.includes('kubernetes')) return <SiKubernetes className={iconClass} />
+  if (lower.includes('linux')) return <SiLinux className={iconClass} />
+  if (lower.includes('aws') || lower.includes('amazon')) return <FaAws className={iconClass} />
+  if (lower.includes('jenkins')) return <SiJenkins className={iconClass} />
+  if (lower.includes('github')) return <SiGithubactions className={iconClass} />
+  if (lower.includes('sonar')) return <SiSonar className={iconClass} />
+  if (lower.includes('mongodb')) return <SiMongodb className={iconClass} />
+  if (lower.includes('dynamodb') || lower.includes('dynamo')) return <Database className={iconClass} />
+  if (lower.includes('firebase')) return <SiFirebase className={iconClass} />
+  if (lower.includes('supabase')) return <SiSupabase className={iconClass} />
+  if (lower.includes('mft') || lower.includes('transfer')) return <GitFork className={iconClass} />
+  if (lower.includes('microservice')) return <Boxes className={iconClass} />
+  if (lower.includes('ci/cd') || lower.includes('pipeline')) return <GitFork className={iconClass} />
+  if (lower.includes('system design') || lower.includes('design')) return <Layers className={iconClass} />
+
+  // Enterprise & IT Systems
+  if (lower.includes('windows')) return <FaWindows className={iconClass} />
+  if (lower.includes('exchange')) return <FaMicrosoft className={iconClass} />
+  if (lower.includes('3cx') || lower.includes('voip')) return <Phone className={iconClass} />
+  if (lower.includes('vtiger') || lower.includes('crm')) return <Users className={iconClass} />
+  if (lower.includes('active directory') || lower.includes('adds') || lower.includes('ad ds')) return <ShieldCheck className={iconClass} />
+  if (lower.includes('rbac') || lower.includes('auth') || lower.includes('security')) return <ShieldCheck className={iconClass} />
+  if (lower.includes('disaster') || lower.includes('recovery')) return <Database className={iconClass} />
+
+  return <Code2 className={iconClass} />
 }
 
 function formatSkillCategoryTitle(category: string): string {
@@ -115,7 +167,7 @@ export function ResumeSection({ data = resumeData }: ResumeSectionProps) {
     <div className="space-y-8 md:space-y-10">
       <div>
         <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Resume</h2>
-        <div className="w-10 h-1 bg-accent rounded-full mb-6" />
+        <div className="w-12 h-1 bg-gradient-to-r from-accent to-accent/30 rounded-full mb-6 shadow-xs shadow-accent/40" />
       </div>
 
       {/* Education */}
@@ -126,8 +178,8 @@ export function ResumeSection({ data = resumeData }: ResumeSectionProps) {
         </div>
         <div className="space-y-4">
           {data.education.map((item: any, index: number) => (
-            <div key={index} className="relative pl-5 md:pl-6 pb-6 border-l-2 border-border last:pb-0">
-              <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-accent" />
+            <div key={index} className="relative pl-5 md:pl-6 pb-6 border-l-2 border-border/80 dark:border-white/[0.08] last:pb-0">
+              <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-accent ring-4 ring-accent/20 shadow-xs shadow-accent" />
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-between items-start">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1.5">
@@ -172,7 +224,7 @@ export function ResumeSection({ data = resumeData }: ResumeSectionProps) {
                         photoUrl: item.imageUrl,
                       })
                     }
-                    className="w-32 sm:w-36 md:w-40 aspect-[3/4] relative rounded-xl overflow-hidden border border-border bg-secondary shrink-0 shadow-sm group cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent block text-left p-0"
+                    className="w-32 sm:w-36 md:w-40 aspect-[3/4] relative rounded-xl overflow-hidden glass-panel-subtle glass-interactive shrink-0 shadow-md group cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent block text-left p-0 border border-black/[0.06] dark:border-white/[0.08]"
                     aria-label="Click to enlarge photo"
                   >
                     <Image
@@ -203,8 +255,8 @@ export function ResumeSection({ data = resumeData }: ResumeSectionProps) {
         </div>
         <div className="space-y-4">
           {data.experience.map((item, index) => (
-            <div key={index} className="relative pl-5 md:pl-6 pb-6 border-l-2 border-border last:pb-0">
-              <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-accent" />
+            <div key={index} className="relative pl-5 md:pl-6 pb-6 border-l-2 border-border/80 dark:border-white/[0.08] last:pb-0">
+              <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-accent ring-4 ring-accent/20 shadow-xs shadow-accent" />
               <h4 className="text-base md:text-lg font-semibold text-foreground mb-2">{item.title}</h4>
               {item.company && (
                 item.companyUrl ? (
@@ -241,8 +293,8 @@ export function ResumeSection({ data = resumeData }: ResumeSectionProps) {
         </div>
         <div className="space-y-6">
           {Object.entries(skillsData).map(([category, items], index) => (
-            <div key={index} className="relative pl-5 md:pl-6 pb-6 border-l-2 border-border last:pb-0">
-              <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-accent" />
+            <div key={index} className="relative pl-5 md:pl-6 pb-6 border-l-2 border-border/80 dark:border-white/[0.08] last:pb-0">
+              <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-accent ring-4 ring-accent/20 shadow-xs shadow-accent" />
               <h4 className="text-base md:text-lg font-semibold text-foreground mb-3">
                 {formatSkillCategoryTitle(category)}
               </h4>
@@ -250,22 +302,12 @@ export function ResumeSection({ data = resumeData }: ResumeSectionProps) {
                 {items.map((skill, i) => (
                   <div
                     key={i}
-                    className="flex flex-col items-center gap-1.5 w-18 sm:w-20 text-center group"
+                    className="flex flex-col items-center gap-1.5 w-18 sm:w-20 text-center group cursor-default"
                   >
-                    <div className="bg-white rounded-lg p-2 flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 shadow-xs border border-border/20 group-hover:scale-105 transition-transform duration-200">
-                      {skill.icon ? (
-                        <Image
-                          src={skill.icon}
-                          alt={skill.name}
-                          width={28}
-                          height={28}
-                          className="object-contain w-7 h-7"
-                        />
-                      ) : (
-                        getSkillFallbackIcon(skill.name)
-                      )}
+                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl glass-panel-subtle glass-interactive flex items-center justify-center p-2.5 shadow-xs border border-black/[0.06] dark:border-white/[0.08] group-hover:scale-110 group-hover:border-accent/50 group-hover:shadow-md group-hover:shadow-accent/15 transition-all duration-300">
+                      {renderSkillIcon(skill.name)}
                     </div>
-                    <span className="text-[10px] sm:text-[11px] text-muted-foreground text-center leading-tight break-words">
+                    <span className="text-[10px] sm:text-[11px] text-muted-foreground text-center leading-tight break-words group-hover:text-foreground transition-colors">
                       {skill.name}
                     </span>
                   </div>
@@ -284,8 +326,8 @@ export function ResumeSection({ data = resumeData }: ResumeSectionProps) {
         </div>
         <div className="space-y-4">
           {extracurricularData.map((item, index) => (
-            <div key={index} className="relative pl-5 md:pl-6 pb-6 border-l-2 border-border last:pb-0">
-              <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-accent" />
+            <div key={index} className="relative pl-5 md:pl-6 pb-6 border-l-2 border-border/80 dark:border-white/[0.08] last:pb-0">
+              <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-accent ring-4 ring-accent/20 shadow-xs shadow-accent" />
               <h4 className="text-base md:text-lg font-semibold text-foreground mb-1">{item.title}</h4>
               <p className="text-xs md:text-sm text-muted-foreground mb-1">{item.organization}</p>
               <p className="text-xs md:text-sm text-accent mb-2">{item.period}</p>

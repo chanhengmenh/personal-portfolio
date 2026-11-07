@@ -183,3 +183,90 @@
 .animate-marquee-slow:hover {
   animation-play-state: paused;
 }
+
+/* ==========================================================================
+   Frosted Glass Neo-Minimalism System
+   ========================================================================== */
+
+.glass-panel {
+  background-color: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+}
+
+.dark .glass-panel {
+  background-color: rgba(18, 22, 31, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.45);
+}
+
+.glass-panel-subtle {
+  background-color: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark .glass-panel-subtle {
+  background-color: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-interactive {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease,
+              background-color 0.3s ease;
+}
+
+.glass-interactive:hover {
+  transform: translateY(-2px);
+  border-color: rgba(59, 130, 246, 0.35);
+  box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.08), 0 0 20px -4px rgba(59, 130, 246, 0.15);
+}
+
+.dark .glass-interactive:hover {
+  background-color: rgba(24, 29, 41, 0.85);
+  border-color: rgba(96, 165, 250, 0.3);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.55), 0 0 25px -5px rgba(59, 130, 246, 0.2);
+}
+
+/* Ambient Background Orb Animations */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(25px, -20px) scale(1.06);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-25px, 20px) scale(0.94);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 14s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 18s ease-in-out infinite;
+}
+
+/* Safe area padding for mobile gesture bar */
+.pb-safe {
+  padding-bottom: max(0.6rem, env(safe-area-inset-bottom));
+}
+
+

@@ -7,7 +7,7 @@ export const profileData = {
   social: {
     github: 'https://github.com/chanhengmenh',
     linkedin: 'https://www.linkedin.com/in/chanheng-menh',
-    credly: 'https://www.credly.com/users/chanheng-menh/edit/badges/credly',
+    credly: 'https://www.credly.com/users/chanheng-menh',
   },
 }
 
@@ -198,7 +198,7 @@ export const projectsData = [
     description:
       'Deep learning NLP pipeline using RoBERTa for automated Discord text moderation and sequence classification, with Optuna hyperparameter tuning to optimize learning rate, batch size, and epochs.',
     tags: ['RoBERTa', 'PyTorch', 'Optuna', 'NLP'],
-    githubUrl: 'https://github.com/chanhengmenh/discord-moderation-system.git',
+    githubUrl: 'https://github.com/chanhengmenh/discord-moderation-system',
     imageUrl: '/discord-moderation.jpg',
   },
   {
@@ -206,7 +206,7 @@ export const projectsData = [
     description:
       'Full-stack educational platform with a Next.js frontend and FastAPI backend, featuring a behavior analytics engine, JWT + RBAC authentication, and PostgreSQL on Railway with internal networking for low latency.',
     tags: ['FastAPI', 'Next.js', 'PostgreSQL', 'Vercel', 'Railway'],
-    githubUrl: 'https://github.com/chanhengmenh/public-school-management-system.git',
+    githubUrl: 'https://github.com/chanhengmenh/public-school-management-system',
     imageUrl: '/public-school.jpg',
   },
   {
@@ -214,7 +214,7 @@ export const projectsData = [
     description:
       'ML pipeline benchmarking tree-based (Random Forest, Gradient Boosting) and linear (Logistic Regression, Naive Bayes) models with tailored preprocessing per architecture, selected by F1-score on imbalanced data.',
     tags: ['Scikit-learn', 'Pandas', 'Python'],
-    githubUrl: 'https://github.com/chanhengmenh/ml-final-spam-email-detection.git',
+    githubUrl: 'https://github.com/chanhengmenh/ml-final-spam-email-detection',
     imageUrl: '/spam_detection.png',
   },
   {
@@ -222,7 +222,7 @@ export const projectsData = [
     description:
       'Designed and implemented a full CI/CD pipeline for a university LMS, automating code quality checks, security scanning, and deployment to AWS EC2. Integrated SonarQube and Trivy to enforce quality gates and block deployments on critical vulnerabilities. Provisioned cloud infrastructure with Terraform and monitored live deployments via Prometheus and Grafana dashboards.',
     tags: ['Jenkins', 'GitHub Actions', 'SonarQube', 'Trivy', 'Docker', 'Terraform', 'Prometheus', 'Grafana', 'AWS EC2'],
-    githubUrl: 'https://github.com/chanhengmenh/devops-final-project.git',
+    githubUrl: 'https://github.com/chanhengmenh/devops-final-project',
     imageUrl: '/lms.png',
   },
   {
@@ -230,7 +230,7 @@ export const projectsData = [
   description:
     'Power BI dashboard analyzing traffic accident data, providing insights into accident trends, causes, and high-risk areas in the United Kingdom over the course of 2021 and 2022. Utilized Power Query for data transformation and DAX for advanced calculations, enabling interactive visualizations and actionable insights for decision-making.',
   tags: ['Power BI'],
-  githubUrl: 'https://github.com/chanhengmenh/power_bi_projects.git',
+  githubUrl: 'https://github.com/chanhengmenh/power_bi_projects',
   imageUrl: '/traffic-accident-bi.png',
   },
 ]
